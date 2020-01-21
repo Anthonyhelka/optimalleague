@@ -5260,3 +5260,32 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 3399ms (Views: 3397.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (2.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "focusesports_development"[0m
+  ↳ /Users/anthony/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "focusesports_test"[0m
+  ↳ /Users/anthony/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (600.1ms)[0m  [1m[35mCREATE DATABASE "focusesports_development" ENCODING = 'unicode'[0m
+  ↳ /Users/anthony/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (337.1ms)[0m  [1m[35mCREATE DATABASE "focusesports_test" ENCODING = 'unicode'[0m
+  ↳ /Users/anthony/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for ::1 at 2020-01-21 16:34:36 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (19.3ms)
+Started GET "/" for ::1 at 2020-01-21 16:34:39 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14929ms (Views: 14927.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 13392ms (Views: 13390.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-21 16:34:58 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+

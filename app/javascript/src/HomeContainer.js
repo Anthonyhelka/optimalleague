@@ -8,7 +8,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Optimal League</h1>
+        <h1>Focus Esports</h1>
       </div>
     )
   }
