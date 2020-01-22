@@ -3,6 +3,10 @@ body {
   margin: 0px;
 }
 
+#app {
+  min-height: 650px;
+}
+
 /* NavigationBar */
 #NavigationBar-container {
   position: absolute;
@@ -71,8 +75,6 @@ body {
   justify-content: center;
   width: 33.3%;
   height: 100%;
-}
-.NavigationBar-li a {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: bold;
@@ -99,4 +101,97 @@ body {
 #NavigationBar-spacer {
   width: 100%;
   height: 100px;
+}
+/* Footer */
+#Footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  border-top: 5px solid #7437B2;
+  border-bottom: 5px solid #7437B2;
+  background: #210A4B;
+}
+#Footer-navigation-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px 0px 20px 0px;
+  padding: 0;
+  list-style: none;
+  color: #FFFFFF;
+}
+.Footer-navigation-li {
+  cursor: pointer;
+  margin: 0px 10px 0px 10px;
+}
+.Footer-navigation-li a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#Footer-social-media-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px 0px 20px 0px;
+  padding: 0;
+  list-style: none;
+}
+.Footer-social-media-li {
+  margin: 0px 10px 0px 10px;
+}
+.Footer-social-media-li img {
+  width: 35px;
+  height: 35px;
+}
+.Footer-social-media-li img:hover {
+  transform: scale(1.1);
+}
+#Footer-copyright {
+  margin: 20px 0px 20px 0px;
+  color: #FFFFFF;
+}
+/* Social Media */
+#Connect-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#Connect-title {
+  text-align: center;
+}
+#Connect-ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+}
+.Connect-li {
+  margin: 5px 0px 5px 0px;
+}
+.Connect-li:hover {
+  transform: scale(1.1);
+}
+.Connect-li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-decoration: none;
+}
+.Connect-li img {
+  width: 50px;
+  height: 50px;
+}
+.Connect-li-title {
+  font-weight: bold;
+  color: #7437B2;
 }

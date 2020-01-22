@@ -1,15 +1,25 @@
 {
-  "application.js": "/packs/js/application-e08a0701866be18340c9.js",
-  "application.js.map": "/packs/js/application-e08a0701866be18340c9.js.map",
+  "application.js": "/packs/js/application-f86ef025d238d3babc98.js",
+  "application.js.map": "/packs/js/application-f86ef025d238d3babc98.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-e08a0701866be18340c9.js"
+        "/packs/js/application-f86ef025d238d3babc98.js"
       ],
       "js.map": [
-        "/packs/js/application-e08a0701866be18340c9.js.map"
+        "/packs/js/application-f86ef025d238d3babc98.js.map"
       ]
     }
   },
-  "media/logos/fcs_logo.png": "/packs/media/logos/fcs_logo-356984db.png"
+  "media/logos/fcs_logo.png": "/packs/media/logos/fcs_logo-356984db.png",
+  "media/social_media/discord.png": "/packs/media/social_media/discord-66d11c24.png",
+  "media/social_media/discord_black.png": "/packs/media/social_media/discord_black-66d11c24.png",
+  "media/social_media/twitch.png": "/packs/media/social_media/twitch-b17c52ed.png",
+  "media/social_media/twitch_black.png": "/packs/media/social_media/twitch_black-b17c52ed.png",
+  "media/social_media/twitter.png": "/packs/media/social_media/twitter-e3bffadb.png",
+  "media/social_media/twitter_black.png": "/packs/media/social_media/twitter_black-e3bffadb.png",
+  "media/social_media/wordpress.png": "/packs/media/social_media/wordpress-f00ac344.png",
+  "media/social_media/wordpress_black.png": "/packs/media/social_media/wordpress_black-f00ac344.png",
+  "media/social_media/youtube.png": "/packs/media/social_media/youtube-15faece5.png",
+  "media/social_media/youtube_black.png": "/packs/media/social_media/youtube_black-15faece5.png"
 }

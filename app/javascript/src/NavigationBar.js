@@ -6,15 +6,15 @@ const NavigationBar = (props) => {
     <div id='NavigationBar-container' key='navbar'>
       <ul id='NavigationBar-ul'>
         <div id='NavigationBar-li-container-left'>
-          <li className='NavigationBar-li'><Link to='/'>Leagues</Link></li>
-          <li className='NavigationBar-li'><Link to='/standings'>Standings</Link></li>
-          <li className='NavigationBar-li'><Link to='/stats'>Stats</Link></li>
+          <Link className='NavigationBar-li' to='/'><li >Leagues</li></Link>
+          <Link className='NavigationBar-li' to='/standings'><li>Standings</li></Link>
+          <Link className='NavigationBar-li' to='/stats'><li>Stats</li></Link>
         </div>
         <li id='NavigationBar-logo'><Link to='/'><img src={require('../../assets/images/logos/fcs_logo.png')} alt='Focus Esports Logo'/></Link></li>
         <div id='NavigationBar-li-container-right'>
-        <li className='NavigationBar-li'><Link to='/about'>About Us</Link></li>
-        <li className='NavigationBar-li'><a href='https://getpryde.com/focus/' target='_blank'>Store</a></li>
-          <li className='NavigationBar-li'><Link to='/social_media'>Social Media</Link></li>
+          <Link className='NavigationBar-li' to='/about'><li>About Us</li></Link>
+          <a className='NavigationBar-li' href='https://getpryde.com/focus/' target='_blank'><li>Store</li></a>
+          <Link className='NavigationBar-li' to='/connect'><li>Connect</li></Link>
         </div>
       </ul>
     </div>,

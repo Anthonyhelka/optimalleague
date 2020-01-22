@@ -4,7 +4,7 @@ class FocusController < ApplicationController
 
   def about
   end
-  
-  def social_media
+
+  def connect
   end
 end

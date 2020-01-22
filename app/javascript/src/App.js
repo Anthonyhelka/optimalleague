@@ -6,7 +6,7 @@ import HomeContainer from './HomeContainer';
 import StandingsContainer from './StandingsContainer';
 import StatsContainer from './StatsContainer';
 import AboutContainer from './AboutContainer';
-import SocialMediaContainer from './SocialMediaContainer';
+import ConnectContainer from './ConnectContainer';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
         <Route exact={true} path='/Standings' component={StandingsContainer}/>
         <Route exact={true} path='/Stats' component={StatsContainer}/>
         <Route exact={true} path='/About' component={AboutContainer}/>
-        <Route exact={true} path='/Social_Media' component={SocialMediaContainer}/>
+        <Route exact={true} path='/Connect' component={ConnectContainer}/>
       </Router>
     )
   }

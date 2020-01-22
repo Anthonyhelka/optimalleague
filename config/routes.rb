@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "home", to: "focus#home", as: "home"
   get "about", to: "focus#about", as: "about"
-  get "social_media", to: "focus#social_media", as: "social_media"
+  get "connect", to: "focus#connect", as: "connect"
 
   get "leagues", to: "league#leagues", as: "leagues"
   get "standings", to: "league#standings", as: "standings"
