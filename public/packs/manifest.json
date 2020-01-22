@@ -1,16 +1,15 @@
 {
-  "application.js": "/packs/js/application-0050437c82da02b6db9f.js",
-  "application.js.map": "/packs/js/application-0050437c82da02b6db9f.js.map",
+  "application.js": "/packs/js/application-e08a0701866be18340c9.js",
+  "application.js.map": "/packs/js/application-e08a0701866be18340c9.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-0050437c82da02b6db9f.js"
+        "/packs/js/application-e08a0701866be18340c9.js"
       ],
       "js.map": [
-        "/packs/js/application-0050437c82da02b6db9f.js.map"
+        "/packs/js/application-e08a0701866be18340c9.js.map"
       ]
     }
   },
-  "media/logos/fcs_logo.png": "/packs/media/logos/fcs_logo-356984db.png",
-  "media/logos/full_logo.png": "/packs/media/logos/full_logo-9425a553.png"
+  "media/logos/fcs_logo.png": "/packs/media/logos/fcs_logo-356984db.png"
 }
