@@ -8,7 +8,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <h1 className='test'>Home</h1>
       </div>
     )
   }

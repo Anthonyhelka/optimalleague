@@ -4,7 +4,4 @@ class FocusController < ApplicationController
 
   def about
   end
-
-  def connect
-  end
 end
