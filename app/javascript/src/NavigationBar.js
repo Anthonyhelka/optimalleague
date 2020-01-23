@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react';
 
 var classNames = require('classnames');
 
@@ -11,10 +12,17 @@ class NavigationBar extends Component {
       leagues: false,
       standings: false,
       stats: false,
-      about: false
+      about: false,
+      dropdown: false,
+      fcs: true,
+      propel: false,
+      aspire: false,
+      currentLeague: 'FCS'
     }
     this.handleCurrentPage = this.handleCurrentPage.bind(this);
     this.handlePageChange = this.handlePageChange.bind(this);
+    this.handleLeagueDropdown = this.handleLeagueDropdown.bind(this);
+    this.handleLeagueChange = this.handleLeagueChange.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +60,27 @@ class NavigationBar extends Component {
     this.props.history.push(pathname);
   }
 
+  handleLeagueDropdown() {
+    this.setState({ dropdown: !this.state.dropdown })
+  }
+
+  handleLeagueChange(event, league) {
+    switch(league) {
+      case 'fcs':
+        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS', dropdown: false });
+        break;
+      case 'propel':
+        this.setState({ fcs: false, propel: true, aspire: false, currentLeague: 'Propel', dropdown: false });
+        break;
+      case 'aspire':
+        this.setState({ fcs: false, propel: false, aspire: true, currentLeague: 'Aspire', dropdown: false });
+        break;
+      default:
+        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS', dropdown: false });
+      break;
+    }
+  }
+
   render() {
     return [
       <div id='NavigationBar-container' key='navbar'>
@@ -59,14 +88,19 @@ class NavigationBar extends Component {
           <div id='NavigationBar-left-logo' className={classNames({ 'NavigationBar-active': this.state.home })} onClick={event => this.handlePageChange(event, '/')}><img src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></div>
         </div>
         <div id='NavigationBar-container-right'>
-          <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.leagues })} onClick={event => this.handlePageChange(event, '/')}>Leagues</div>
+          <div className='NavigationBar-right-item' onClick={this.handleLeagueDropdown}>{this.state.currentLeague} <Icon name='dropdown' /></div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.standings })} onClick={event => this.handlePageChange(event, '/standings')}>Standings</div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.stats })} onClick={event => this.handlePageChange(event, '/stats')}>Stats</div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.about })} onClick={event => this.handlePageChange(event, '/about')}>About Us</div>
           <a className='NavigationBar-right-item' href='https://getpryde.com/focus/' target='_blank'>Shop</a>
         </div>
       </div>,
-      <div id='NavigationBar-spacer' key='spacer'></div>
+      <div id='NavigationBar-spacer' key='spacer'></div>,
+      <div className={classNames('NavigationBar-dropdown-container', { 'NavigationBar-dropdown-container-hidden': !this.state.dropdown })} key='dropdown'>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.state.fcs })} onClick={event => this.handleLeagueChange(event, 'fcs')}>FCS</div>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.state.propel })} onClick={event => this.handleLeagueChange(event, 'propel')}>Propel</div>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.state.aspire })} onClick={event => this.handleLeagueChange(event, 'aspire')}>Aspire</div>
+      </div>
     ];
   }
 }

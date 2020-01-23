@@ -23,8 +23,8 @@ body {
   top: 0px;
   width: 100%;
   height: 50px;
-  border: 2px solid #000000;
   background-color: #000000;
+  z-index: 2;
 }
 #NavigationBar-container-left {
   display: flex;
@@ -72,6 +72,7 @@ body {
 }
 .NavigationBar-right-item:hover {
   border-bottom: 3px solid #0EFBFB;
+  color: #FFFFFF;
 }
 .NavigationBar-active {
   border-bottom: 3px solid #0EFBFB !important;
@@ -80,7 +81,54 @@ body {
   width: 100%;
   height: 50px;
 }
-
+.NavigationBar-dropdown-container,
+.NavigationBar-dropdown-container-hidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  -webkit-transition: top 0.7s ease-in-out;
+  -moz-transition: top 0.7s ease-in-out;
+  -o-transition: top 0.7s ease-in-out;
+  transition: top 0.7s ease-in-out;
+  width: 50%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+  background-color: #000000;
+  cursor: pointer;
+  z-index: 1;
+}
+.NavigationBar-dropdown-container-hidden {
+  top: 0px;
+}
+.NavigationBar-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.3%;
+  height: 100%;
+  font-weight: bold;
+  color: #000000;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.NavigationBar-dropdown-item:hover {
+  color: #783BB5;
+}
+.NavigationBar-dropdown-active {
+  color: #FFFFFF;
+  background-color: #783BB5;
+  cursor: pointer;
+}
+.NavigationBar-dropdown-active:hover {
+  color: #FFFFFF;
+}
 /* Footer */
 #Footer-container {
   display: flex;
