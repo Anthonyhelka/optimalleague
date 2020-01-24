@@ -81,6 +81,11 @@ body {
   width: 100%;
   height: 50px;
 }
+#NavigationBar-dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .NavigationBar-dropdown-container,
 .NavigationBar-dropdown-container-hidden {
   display: flex;

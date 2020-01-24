@@ -23,9 +23,11 @@ class NavigationBar extends Component {
     this.handlePageChange = this.handlePageChange.bind(this);
     this.handleLeagueDropdown = this.handleLeagueDropdown.bind(this);
     this.handleLeagueChange = this.handleLeagueChange.bind(this);
+    this.handleOutsideDropdownClick = this.handleOutsideDropdownClick.bind(this);
   }
 
   componentDidMount() {
+    document.addEventListener('click', this.handleOutsideDropdownClick);
     this.handleCurrentPage(window.location.pathname);
   }
 
@@ -67,17 +69,23 @@ class NavigationBar extends Component {
   handleLeagueChange(event, league) {
     switch(league) {
       case 'fcs':
-        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS', dropdown: false });
+        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS' });
         break;
       case 'propel':
-        this.setState({ fcs: false, propel: true, aspire: false, currentLeague: 'Propel', dropdown: false });
+        this.setState({ fcs: false, propel: true, aspire: false, currentLeague: 'Propel' });
         break;
       case 'aspire':
-        this.setState({ fcs: false, propel: false, aspire: true, currentLeague: 'Aspire', dropdown: false });
+        this.setState({ fcs: false, propel: false, aspire: true, currentLeague: 'Aspire' });
         break;
       default:
-        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS', dropdown: false });
+        this.setState({ fcs: true, propel: false, aspire: false, currentLeague: 'FCS' });
       break;
+    }
+  }
+
+  handleOutsideDropdownClick() {
+    if (!event.target.className.includes('NavigationBar') && !event.target.id.includes('NavigationBar')) {
+      this.setState({ dropdown: false });
     }
   }
 
@@ -85,10 +93,10 @@ class NavigationBar extends Component {
     return [
       <div id='NavigationBar-container' key='navbar'>
         <div id='NavigationBar-container-left'>
-          <div id='NavigationBar-left-logo' className={classNames({ 'NavigationBar-active': this.state.home })} onClick={event => this.handlePageChange(event, '/')}><img src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></div>
+          <div id='NavigationBar-left-logo' className={classNames({ 'NavigationBar-active': this.state.home })} onClick={event => this.handlePageChange(event, '/')}><img id='NavigationBar-logo' src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></div>
         </div>
         <div id='NavigationBar-container-right'>
-          <div className='NavigationBar-right-item' onClick={this.handleLeagueDropdown}>{this.state.currentLeague} <Icon name='dropdown' /></div>
+          <div className='NavigationBar-right-item Navigationbar-dropdown-button' onClick={this.handleLeagueDropdown}>{this.state.currentLeague} {this.state.dropdown ? (<Icon id='NavigationBar-dropdown-icon' name='dropdown' flipped='vertically'/>) : (<Icon id='NavigationBar-dropdown-icon' name='dropdown'/>)}</div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.standings })} onClick={event => this.handlePageChange(event, '/standings')}>Standings</div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.stats })} onClick={event => this.handlePageChange(event, '/stats')}>Stats</div>
           <div className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.state.about })} onClick={event => this.handlePageChange(event, '/about')}>About Us</div>
