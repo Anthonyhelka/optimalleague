@@ -1,28 +1,12 @@
 const initialState = {
-  home: false,
-  standings: false,
-  stats: false,
-  about: false,
+  path: '/',
   dropdown: false
 }
 
 const navigationBar = (state = initialState, action) => {
   switch(action.type) {
     case HANDLE_NAVIGATION:
-      switch(action.destination) {
-        case '/':
-          return {...initialState, home: true, dropdown: state.dropdown}
-        case '/home':
-          return {...initialState, home: true, dropdown: state.dropdown}
-        case '/standings':
-          return {...initialState, standings: true, dropdown: state.dropdown}
-        case '/stats':
-          return {...initialState, stats: true, dropdown: state.dropdown}
-        case '/about':
-          return {...initialState, about: true, dropdown: state.dropdown}
-        default:
-          return {...initialState, home: true, dropdown: state.dropdown}
-      }
+      return {...state, path: action.desiredPath}
     case HANDLE_DROPDOWN:
       return {...state, dropdown: !state.dropdown}
     case HANDLE_OUTSIDE_CLICK:
@@ -35,10 +19,10 @@ const navigationBar = (state = initialState, action) => {
 }
 
 const HANDLE_NAVIGATION = 'HANDLE_NAVIGATION';
-const handleNavigation = (event, destination) => {
+const handleNavigation = (event, desiredPath) => {
   return {
     type: HANDLE_NAVIGATION,
-    destination: destination
+    desiredPath: desiredPath
   }
 }
 
