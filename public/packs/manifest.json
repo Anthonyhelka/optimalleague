@@ -1,15 +1,16 @@
 {
-  "application.js": "/packs/js/application-c1ac55c42a91b3a4b485.js",
-  "application.js.map": "/packs/js/application-c1ac55c42a91b3a4b485.js.map",
+  "application.js": "/packs/js/application-d37f9abec0f68b08aac1.js",
+  "application.js.map": "/packs/js/application-d37f9abec0f68b08aac1.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-c1ac55c42a91b3a4b485.js"
+        "/packs/js/application-d37f9abec0f68b08aac1.js"
       ],
       "js.map": [
-        "/packs/js/application-c1ac55c42a91b3a4b485.js.map"
+        "/packs/js/application-d37f9abec0f68b08aac1.js.map"
       ]
     }
   },
-  "media/logos/full_purple.png": "/packs/media/logos/full_purple-6da3b9d4.png"
+  "media/logos/full_purple.png": "/packs/media/logos/full_purple-6da3b9d4.png",
+  "media/miscellaneous_images/loading_gears_black.svg": "/packs/media/miscellaneous_images/loading_gears_black-553646cd.svg"
 }

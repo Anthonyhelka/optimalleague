@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get "league/fcs", to: "league#fcs", as: "fcs"
+      get "league/propel", to: "league#propel", as: "propel"
+      get "league/aspire", to: "league#aspire", as: "aspire"
     end
   end
 end
