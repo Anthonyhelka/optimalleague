@@ -26,8 +26,8 @@ class StandingsContainer extends Component {
     });
 
     return (
-      <div>
-        {this.props.isFetching ? (
+      <div id='StandingsContainer-container'>
+        {!this.props.isFetching ? (
           <div>
             <h1>{this.props.league}</h1>
             <h3>{this.props.minRank} - {this.props.maxRank}</h3>
@@ -37,8 +37,9 @@ class StandingsContainer extends Component {
             </div>
           </div>
         ) : (
-          <div>
-            <img src={loading_gears} />
+          <div id='StandingsContainer-loading-container'>
+            <img id='StandingsContainer-loading-gears' src={loading_gears} />
+            <span id='StandingsContainer-loading-text'>We are fetching Team and Player data, please be patient!</span>
           </div>
         )}
       </div>

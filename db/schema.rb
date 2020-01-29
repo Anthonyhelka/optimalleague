@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
   create_table "players", force: :cascade do |t|
     t.bigint "team_id", null: false
     t.string "name", null: false
-    t.string "starter", null: false
+    t.integer "kills"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 

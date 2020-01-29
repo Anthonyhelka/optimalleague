@@ -74,3 +74,5 @@ gem 'dotenv-rails'
 group :production, :staging do
   gem 'rails_12factor'
 end
+
+gem 'google_drive'

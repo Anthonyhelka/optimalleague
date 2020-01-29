@@ -4,7 +4,9 @@ class CreatePlayer < ActiveRecord::Migration[5.2]
       t.belongs_to :team, null: false
 
       t.string :name, null: false, unique: true
-      t.string :starter, null: false
+      t.integer :kills
+
+      t.timestamps
     end
   end
 end

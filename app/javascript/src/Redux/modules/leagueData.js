@@ -76,6 +76,7 @@ const getData = () => {
     .then(response => {
       if(!response.error) {
         dispatch(setData(response.min_rank, response.max_rank, response.teams));
+        dispatch(getDataRequestSuccess());
       }
     })
   }
