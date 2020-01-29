@@ -27,9 +27,9 @@ class StandingsContainer extends Component {
 
     return (
       <div id='StandingsContainer-container'>
+        <h1>{this.props.league}</h1>
         {!this.props.isFetching ? (
           <div>
-            <h1>{this.props.league}</h1>
             <h3>{this.props.minRank} - {this.props.maxRank}</h3>
             <div>
               <h3>Teams</h3>

@@ -18,15 +18,21 @@ class ApplicationController < ActionController::Base
         player = Player.find_by(name: player_data[0])
         player.update(
           name: player_data[0],
+          league_id: league_id,
           team_id: Team.where(name: player_data[1], league_id: league_id)[0].id,
           kills: player_data[2],
+          deaths: player_data[3],
+          assists: player_data[4],
           updated_at: Time.now
         )
       else
         player = Player.create(
           name: player_data[0],
+          league_id: league_id,
           team_id: Team.where(name: player_data[1])[0].id,
           kills: player_data[2],
+          deaths: player_data[3],
+          assists: player_data[4]
         )
         player.save
       end

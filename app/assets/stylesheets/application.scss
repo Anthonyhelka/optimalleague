@@ -152,6 +152,14 @@ body {
 #StandingsContainer-loading-text {
   font-weight: bold;
 }
+
+/* StatsContainer */
+#StatsContainer-table {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  text-align: left;
+}
 /* Footer */
 #Footer-container {
   display: flex;

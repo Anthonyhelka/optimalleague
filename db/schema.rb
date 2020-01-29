@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
   end
 
   create_table "players", force: :cascade do |t|
+    t.bigint "league_id", null: false
     t.bigint "team_id", null: false
     t.string "name", null: false
     t.integer "kills"
+    t.integer "deaths"
+    t.integer "assists"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_players_on_league_id"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
