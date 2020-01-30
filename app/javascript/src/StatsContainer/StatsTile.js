@@ -9,6 +9,8 @@ const StatsTile = (props) => {
       <td>{props.deaths}</td>
       <td>{props.assists}</td>
       <td>{((props.kills + props.assists) / props.deaths).toFixed(2)}</td>
+      <td>{props.gamesPlayed}</td>
+      <td>{props.impactEfficiencyRating}</td>
     </tr>
   );
 }

@@ -21,6 +21,8 @@ class StatsContainer extends Component {
           kills={player.kills}
           deaths={player.deaths}
           assists={player.assists}
+          gamesPlayed={player.games_played}
+          impactEfficiencyRating={player.impact_efficiency_rating}
         />
       )
     });
@@ -37,6 +39,8 @@ class StatsContainer extends Component {
                 <th onClick={event => this.props.handleSort(event, 'deaths')}>Deaths&nbsp;{this.props.sort === 'deaths' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
                 <th onClick={event => this.props.handleSort(event, 'assists')}>Assists&nbsp;{this.props.sort === 'assists' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
                 <th onClick={event => this.props.handleSort(event, 'kda')}>KDA&nbsp;{this.props.sort === 'kda' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
+                <th onClick={event => this.props.handleSort(event, 'gamesPlayed')}>Games&nbsp;{this.props.sort === 'gamesPlayed' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
+                <th onClick={event => this.props.handleSort(event, 'impactEfficiencyRating')}>Impact Efficiency Rating&nbsp;{this.props.sort === 'impactEfficiencyRating' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               </tr>
               {players}
             </tbody>

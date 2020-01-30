@@ -8,6 +8,8 @@ class CreatePlayer < ActiveRecord::Migration[5.2]
       t.integer :kills
       t.integer :deaths
       t.integer :assists
+      t.integer :games_played
+      t.integer :impact_efficiency_rating
 
       t.timestamps
     end
