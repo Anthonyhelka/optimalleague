@@ -1,0 +1,67 @@
+const initialState = {
+  sort: 'kda',
+  direction: 'descending'
+}
+
+const statsContainer = (state = initialState, action) => {
+  switch(action.type) {
+    case CHANGE_SORT:
+      return {...state, sort: action.sort}
+    case CHANGE_DIRECTION:
+      return {...state, direction: action.direction}
+    default:
+      return state;
+  }
+}
+
+const CHANGE_SORT = 'CHANGE_SORT';
+const changeSort = (sort) => {
+  return {
+    type: CHANGE_SORT,
+    sort: sort
+  }
+}
+
+const CHANGE_DIRECTION = 'CHANGE_DIRECTION';
+const changeDirection = (direction) => {
+  return {
+    type: CHANGE_DIRECTION,
+    direction: direction
+  }
+}
+
+const handleSort = (event, desiredSort) => {
+  return (dispatch, getState) => {
+    let direction;
+    desiredSort === getState().statsContainer.sort ? (getState().statsContainer.direction === 'ascending' ? direction = 'descending' : direction = 'ascending') : (direction = 'ascending')
+    dispatch(changeDirection(direction));
+    dispatch(changeSort(desiredSort));
+    switch(desiredSort) {
+      case 'name':
+        getState().leagueData.players.sort(function(a, b) { return (direction === 'ascending' ? a.name < b.name : b.name < a.name) ? -1 : (direction === 'ascending' ? a.name > b.name : b.name > a.name) ? 1 : 0; });
+        break;
+      case 'teamName':
+        getState().leagueData.players.sort(function(a, b) { return (direction === 'ascending' ? a.team.name < b.team.name : b.team.name < a.team.name) ? -1 : (direction === 'ascending' ? a.team.name > b.team.name : b.team.name > a.team.name) ? 1 : 0; });
+        break;
+      case 'kills':
+        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.kills : b.kills) - parseFloat(direction === 'ascending' ? b.kills : a.kills));
+        break;
+      case 'deaths':
+        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.deaths : b.deaths) - parseFloat(direction === 'ascending' ? b.deaths : a.deaths));
+        break;
+      case 'assists':
+        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.assists : b.assists) - parseFloat(direction === 'ascending' ? b.assists : a.assists));
+        break;
+      case 'kda':
+        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? ((a.kills + a.assists) / a.deaths) : ((b.kills + b.assists) / b.deaths)) - parseFloat(direction === 'ascending' ? ((b.kills + b.assists) / b.deaths) : ((a.kills + a.assists) / a.deaths)));
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+export {
+  statsContainer,
+  handleSort
+}
