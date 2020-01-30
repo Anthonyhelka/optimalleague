@@ -26,7 +26,7 @@ class StatsContainer extends Component {
     });
     return (
       <div id='StatsContainer-container'>
-        <h1>{this.props.league} {this.props.sort} - {this.props.direction}</h1>
+        <h1>{this.props.league}</h1>
         {!this.props.isFetching ? (
           <table id='StatsContainer-table'>
             <tbody>
