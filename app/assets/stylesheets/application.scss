@@ -151,37 +151,124 @@ body {
 }
 #StandingsContainer-loading-text {
   font-weight: bold;
+  color: #000000;
 }
 
 /* StatsContainer */
 #StatsContainer-container {
+  width: 100%;
+  min-height: 800px;
   padding: 20px;
+  color: #FFFFFF;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23783bb5' fill-opacity='0.16'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 }
 #StatsContainer-table {
-  width: 80%;
+  width: 1200px;
   height: auto;
-  margin: auto;
+  border: 2px solid #783BB5;
+  border-radius: 3px;
+  border-spacing: 0px;
   text-align: left;
 }
-
+#StatsContainer-table-body {
+  width: 100%;
+}
+#StatsContainer-table-header {
+  width: 100%;
+  height: 30px;
+  color: #FFFFFF;
+  background-color: #783BB5;
+}
+.StatsContainer-table-row {
+  width: 100%;
+  height: 25px;
+}
+.StatsContainer-table-row:nth-child(even) {
+  background-color: #353637;
+}
+.StatsContainer-table-row:nth-child(odd) {
+  background-color: #1A1B1D;
+}
+#StatsContainer-league-logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
 #StatsContainer-single-stat-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-bottom: 50px;
+  width: 1200px;
+  margin-bottom: 20px;
 }
-.StatsContainer-SingleStatTable {
+#StatsContainer-SingleStatTable {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex: 1 1;
+  width: 275px;
   text-align: left;
-  border-spacing: 30px 0;
-  border-collapse: separate;
+  border-collapse: collapse;
+  border: 2px solid #783BB5;
+  border-radius: 3px;
+  overflow: hidden;
 }
+#StatsContainer-SingleStatTable-body-container {
+  border: 2px solid #0EFBFB;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#StatsContainer-SingleStatTable-body {
+  width: 300px;
+  height: auto;
+}
+#StatsContainer-SingleStatTable-header {
+  width: 100%;
+  height: 30px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  color: #FFFFFF;
+  background-color: #783BB5;
+}
+#StatsContainer-SingleStatTable-name-column {
+  width: 150px;
+  padding-left: 5px;
+}
+#StatsContainer-SingleStatTable-name-cell {
+  text-align: left;
+  padding-left: 5px;
+}
+#StatsContainer-SingleStatTable-team-column {
+  width: 75px;
+}
+#StatsContainer-SingleStatTable-team-cell {
+  text-align: left;
+}
+#StatsContainer-SingleStatTable-value-column {
+  width: 75px;
+}
+#StatsContainer-SingleStatTable-value-cell {
+  text-align: right;
+  padding-right: 5px;
+}
+.StatsContainer-SingleStatTable-row {
+  width: 100%;
+  height: 25px;
+}
+.StatsContainer-SingleStatTable-row:nth-child(even) {
+  background-color: #353637;
+}
+.StatsContainer-SingleStatTable-row:nth-child(odd) {
+  background-color: #1A1B1D;
+}
+#StatsContainer-table-name-column {
+  padding-left: 5px;
+}
+#StatsContainer-table-name-cell {
+  padding-left: 5px;
+}
+
 /* Footer */
 #Footer-container {
   display: flex;

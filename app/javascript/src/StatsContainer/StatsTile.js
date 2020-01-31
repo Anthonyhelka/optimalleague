@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 const StatsTile = (props) => {
   return (
-    <tr>
-      <td>{props.name}</td>
+    <tr className='StatsContainer-table-row'>
+      <td id='StatsContainer-table-name-cell'>{props.name}</td>
       <td>{props.teamName}</td>
       <td>{props.kills}</td>
       <td>{props.deaths}</td>

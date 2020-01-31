@@ -12,6 +12,8 @@ class StatsContainer extends Component {
   }
 
   render() {
+    const pathToLeagueLogo = require.context('../../../assets/images/logos', true);
+
     let players = this.props.players.map(player => {
       return (
         <StatsTile
@@ -30,18 +32,18 @@ class StatsContainer extends Component {
 
     return (
       <div id='StatsContainer-container'>
-        <h1>{this.props.league}</h1>
+        <img id='StatsContainer-league-logo' src={`${pathToLeagueLogo(`./${(this.props.league).toLowerCase()}_blue`, true)}`} alt={`${this.props.league} League Logo`}/>
         {!this.props.isFetching ? [
-          <div id='StatsContainer-single-stat-container'>
+          <div id='StatsContainer-single-stat-container' key='SingleStatTables'>
             <SingleStatTable key='kills' value='Kills' players={this.props.players.sort((a, b) => parseFloat(b.kills) - parseFloat(a.kills)).slice(0,5)} />
             <SingleStatTable key='assists' value='Assists' players={this.props.players.sort((a, b) => parseFloat(b.assists) - parseFloat(a.assists)).slice(0,5)} />
             <SingleStatTable key='kda' value='KDA' players={this.props.players.sort((a, b) => parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths)).slice(0,5)} />
             <SingleStatTable key='ier' value='IER' players={this.props.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier)).slice(0,5)} />
           </div>,
-          <table id='StatsContainer-table'>
-            <tbody>
-              <tr>
-                <th onClick={event => this.props.handleSort(event, 'name')}>Name&nbsp;{this.props.sort === 'name' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
+          <table id='StatsContainer-table' key='AllStatsTable'>
+            <tbody id='StatsContainer-table-body'>
+              <tr id='StatsContainer-table-header'>
+                <th id='StatsContainer-table-name-column' onClick={event => this.props.handleSort(event, 'name')}>Name&nbsp;{this.props.sort === 'name' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
                 <th onClick={event => this.props.handleSort(event, 'teamName')}>Team&nbsp;{this.props.sort === 'teamName' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
                 <th onClick={event => this.props.handleSort(event, 'kills')}>Kills&nbsp;{this.props.sort === 'kills' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
                 <th onClick={event => this.props.handleSort(event, 'deaths')}>Deaths&nbsp;{this.props.sort === 'deaths' ? (<Icon name={`sort ${this.props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
@@ -56,7 +58,7 @@ class StatsContainer extends Component {
         ] : (
           <div id='StandingsContainer-loading-container'>
             <img id='StandingsContainer-loading-gears' src={loading_gears} />
-            <span id='StandingsContainer-loading-text'>We are fetching Team and Player data, please be patient!</span>
+            <span id='StandingsContainer-loading-text'>We are fetching data, please be patient!</span>
           </div>
         )}
       </div>
