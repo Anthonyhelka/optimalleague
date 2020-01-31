@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
     t.integer "deaths"
     t.integer "assists"
     t.integer "games_played"
-    t.integer "impact_efficiency_rating"
+    t.integer "ier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_players_on_league_id"

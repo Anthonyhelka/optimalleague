@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
           deaths: player_data[3],
           assists: player_data[4],
           games_played: player_data[29],
-          impact_efficiency_rating: player_data[30],
+          ier: player_data[30],
           updated_at: Time.now
         )
       else
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
           deaths: player_data[3],
           assists: player_data[4],
           games_played: player_data[29],
-          impact_efficiency_rating: player_data[30]
+          ier: player_data[30]
         )
         player.save
       end

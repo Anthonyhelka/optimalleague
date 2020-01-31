@@ -163,6 +163,25 @@ body {
   margin: auto;
   text-align: left;
 }
+
+#StatsContainer-single-stat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.StatsContainer-SingleStatTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 1;
+  text-align: left;
+  border-spacing: 30px 0;
+  border-collapse: separate;
+}
 /* Footer */
 #Footer-container {
   display: flex;

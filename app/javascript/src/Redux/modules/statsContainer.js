@@ -1,5 +1,5 @@
 const initialState = {
-  sort: 'impactEfficiencyRating',
+  sort: 'ier',
   direction: 'descending'
 }
 
@@ -58,8 +58,8 @@ const handleSort = (event, desiredSort) => {
       case 'gamesPlayed':
         getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.games_played : b.games_played) - parseFloat(direction === 'ascending' ? b.games_played : a.games_played));
         break;
-      case 'impactEfficiencyRating':
-        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.impact_efficiency_rating : b.impact_efficiency_rating) - parseFloat(direction === 'ascending' ? b.impact_efficiency_rating : a.impact_efficiency_rating));
+      case 'ier':
+        getState().leagueData.players.sort((a, b) => parseFloat(direction === 'ascending' ? a.ier : b.ier) - parseFloat(direction === 'ascending' ? b.ier : a.ier));
         break;
       default:
         break;
