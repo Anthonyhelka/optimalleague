@@ -1,16 +1,22 @@
 {
-  "application.js": "/packs/js/application-1cc6dc22a3a749cb04fd.js",
-  "application.js.map": "/packs/js/application-1cc6dc22a3a749cb04fd.js.map",
+  "application.js": "/packs/js/application-a2b0e53d4f95c0aa5194.js",
+  "application.js.map": "/packs/js/application-a2b0e53d4f95c0aa5194.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-1cc6dc22a3a749cb04fd.js"
+        "/packs/js/application-a2b0e53d4f95c0aa5194.js"
       ],
       "js.map": [
-        "/packs/js/application-1cc6dc22a3a749cb04fd.js.map"
+        "/packs/js/application-a2b0e53d4f95c0aa5194.js.map"
       ]
     }
   },
+  "media/logos/aspire_blue.png": "/packs/media/logos/aspire_blue-e1e093f2.png",
+  "media/logos/fcs_blue.png": "/packs/media/logos/fcs_blue-bfdc8270.png",
+  "media/logos/full_blue.png": "/packs/media/logos/full_blue-9425a553.png",
   "media/logos/full_purple.png": "/packs/media/logos/full_purple-6da3b9d4.png",
+  "media/logos/partial_black.png": "/packs/media/logos/partial_black-0a9c236d.png",
+  "media/logos/partial_white.png": "/packs/media/logos/partial_white-cf5d3c05.png",
+  "media/logos/propel_blue.png": "/packs/media/logos/propel_blue-e00f1051.png",
   "media/miscellaneous_images/loading_gears_black.svg": "/packs/media/miscellaneous_images/loading_gears_black-553646cd.svg"
 }

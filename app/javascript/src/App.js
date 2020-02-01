@@ -8,7 +8,7 @@ import { getData } from './Redux/modules/leagueData';
 import NavigationBar from './NavigationBar';
 import HomeContainer from './HomeContainer';
 import StandingsContainer from './StandingsContainer';
-import StatsContainer from './StatsContainer';
+import StatsContainer from './StatsContainer/StatsContainer';
 import AboutContainer from './AboutContainer';
 
 class App extends Component {

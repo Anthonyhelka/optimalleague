@@ -77,6 +77,7 @@ const getData = () => {
     })
     .then(response => {
       if(!response.error) {
+        response.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier));
         dispatch(setData(response.min_rank, response.max_rank, response.teams, response.players));
         dispatch(getDataRequestSuccess());
       }

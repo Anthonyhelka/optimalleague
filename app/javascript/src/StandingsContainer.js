@@ -39,7 +39,7 @@ class StandingsContainer extends Component {
         ) : (
           <div id='StandingsContainer-loading-container'>
             <img id='StandingsContainer-loading-gears' src={loading_gears} />
-            <span id='StandingsContainer-loading-text'>We are fetching Team and Player data, please be patient!</span>
+            <span id='StandingsContainer-loading-text'>We are fetching data, please be patient!</span>
           </div>
         )}
       </div>
