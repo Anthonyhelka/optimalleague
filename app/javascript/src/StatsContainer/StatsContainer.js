@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { handleSort } from '../Redux/modules/statsContainer';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Popup } from 'semantic-ui-react';
 
 import LeaderboardContainer from './LeaderboardContainer';
 import PlayerTile from './PlayerTile';
@@ -31,10 +31,10 @@ const StatsContainer = (props) => {
       </div>
       {!props.isFetching ? [
         <div id='StatsContainer-leadboard-container' key='leadeboards'>
-          <LeaderboardContainer key='kills' stat='Kills' players={props.players.sort((a, b) => parseFloat(b.kills) - parseFloat(a.kills)).slice(0,5)} />
-          <LeaderboardContainer key='assists' stat='Assists' players={props.players.sort((a, b) => parseFloat(b.assists) - parseFloat(a.assists)).slice(0,5)} />
-          <LeaderboardContainer key='kda' stat='KDA' players={props.players.sort((a, b) => parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths)).slice(0,5)} />
-          <LeaderboardContainer key='ier' stat='IER' players={props.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier)).slice(0,5)} />
+          <LeaderboardContainer key='kills' stat='Kills' players={props.players.sort((a, b) => parseFloat(b.kills) - parseFloat(a.kills) || parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths)).slice(0,5)} />
+          <LeaderboardContainer key='assists' stat='Assists' players={props.players.sort((a, b) => parseFloat(b.assists) - parseFloat(a.assists) || parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths)).slice(0,5)} />
+          <LeaderboardContainer key='kda' stat='KDA' players={props.players.sort((a, b) => parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths) || parseFloat(b.kills) - parseFloat(a.kills)).slice(0,5)} />
+          <LeaderboardContainer key='ier' stat='IER' players={props.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier) || parseFloat((b.kills + b.assists) / b.deaths) - parseFloat((a.kills + a.assists) / a.deaths)).slice(0,5)} />
         </div>,
         <table id='StatsContainer-table' key='table'>
           <thead id='StatsContainer-header'>
@@ -46,7 +46,7 @@ const StatsContainer = (props) => {
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'assists')}>Assists&nbsp;{props.sort === 'assists' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'kda')}>KDA&nbsp;{props.sort === 'kda' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'gamesPlayed')}>Games&nbsp;{props.sort === 'gamesPlayed' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
-              <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'ier')}>IER&nbsp;{props.sort === 'ier' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
+              <Popup content='Impact Efficiency Rating' basic inverted trigger={<th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'ier')}>IER&nbsp;{props.sort === 'ier' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>} />
             </tr>
           </thead>
           <tbody id='StatsContainer-body'>
