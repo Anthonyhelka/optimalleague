@@ -5,7 +5,7 @@ import { Icon } from 'semantic-ui-react';
 
 import LeaderboardContainer from './LeaderboardContainer';
 import PlayerTile from './PlayerTile';
-import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears_black.svg';
+import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears_white.svg';
 
 const StatsContainer = (props) => {
   const pathToLeagueLogo = require.context('../../../assets/images/logos', true);
@@ -54,9 +54,9 @@ const StatsContainer = (props) => {
           </tbody>
         </table>
       ] : (
-        <div id='StandingsContainer-loading-container'>
-          <img id='StandingsContainer-loading-gears' src={loading_gears} />
-          <span id='StandingsContainer-loading-text'>We are fetching data, please be patient!</span>
+        <div id='StatsContainer-loading-container'>
+          <img id='StatsContainer-loading-gears' src={loading_gears} />
+          <span id='StatsContainer-loading-text'>We are fetching data, please be patient!</span>
         </div>
       )}
     </div>
