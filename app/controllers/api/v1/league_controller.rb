@@ -1,6 +1,6 @@
 class Api::V1::LeagueController < ApplicationController
   def fcs
-    if Player.where(league_id: 1).length === 0 || Time.now - Player.first.updated_at > 7200
+    if Player.where(league_id: 1).length === 0 || Time.now - Player.where(league_id: 1).last.updated_at > 7200
       data = get_player_stats("FCS")
       update_player_stats(data, 1)
     end
@@ -11,7 +11,7 @@ class Api::V1::LeagueController < ApplicationController
   end
 
   def propel
-    if Player.where(league_id: 2).length === 0 || Time.now - Player.first.updated_at > 7200
+    if Player.where(league_id: 2).length === 0 || Time.now - Player.where(league_id: 2).last.updated_at > 7200
       data = get_player_stats("PROPEL")
       update_player_stats(data, 2)
     end
@@ -22,7 +22,7 @@ class Api::V1::LeagueController < ApplicationController
   end
 
   def aspire
-    if Player.where(league_id: 3).length === 0 || Time.now - Player.first.updated_at > 7200
+    if Player.where(league_id: 3).length === 0 || Time.now - Player.where(league_id: 3).last.updated_at > 7200
       data = get_player_stats("ASPIRE")
       update_player_stats(data, 3)
     end

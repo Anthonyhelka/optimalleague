@@ -16,6 +16,7 @@ const StatsContainer = (props) => {
         id={player.id}
         name={player.name}
         teamName={player.team.name}
+        role={player.role}
         kills={player.kills}
         deaths={player.deaths}
         assists={player.assists}
@@ -41,6 +42,7 @@ const StatsContainer = (props) => {
             <tr id='StatsContainer-header-row'>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'name')}>Name&nbsp;{props.sort === 'name' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'teamName')}>Team&nbsp;{props.sort === 'teamName' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
+              <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'role')}>Role&nbsp;{props.sort === 'role' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'kills')}>Kills&nbsp;{props.sort === 'kills' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'deaths')}>Deaths&nbsp;{props.sort === 'deaths' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
               <th className='StatsContainer-header-cell' onClick={event => props.handleSort(event, 'assists')}>Assists&nbsp;{props.sort === 'assists' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
