@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
     t.bigint "league_id", null: false
     t.bigint "team_id", null: false
     t.string "name", null: false
+    t.string "role"
     t.integer "kills"
     t.integer "deaths"
     t.integer "assists"

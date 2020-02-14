@@ -21,7 +21,7 @@ class NavigationBar extends Component {
     return [
       <div id='NavigationBar-container' key='navbar'>
         <div id='NavigationBar-container-left'>
-          <Link to='/' id='NavigationBar-left-logo' className={classNames({ 'NavigationBar-active': this.props.path === '/' || this.props.path === '/home' })} onClick={event => this.props.handleNavigation(event, '/')}><img id='NavigationBar-logo' src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></Link>
+          <Link to='/' id='NavigationBar-left-logo' onClick={event => this.props.handleNavigation(event, '/')}><img id='NavigationBar-logo' src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></Link>
         </div>
         <div id='NavigationBar-container-right'>
           <div className='NavigationBar-right-item Navigationbar-dropdown-button' onClick={this.props.handleDropdown}>{this.props.league} {this.props.dropdown ? (<Icon id='NavigationBar-dropdown-icon' name='dropdown' flipped='vertically'/>) : (<Icon id='NavigationBar-dropdown-icon' name='dropdown'/>)}</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Popup } from 'semantic-ui-react';
 
 const LeaderboardContainer = (props) => {
   let players = props.players.map((player, index) => {
@@ -17,7 +18,7 @@ const LeaderboardContainer = (props) => {
     <table id='LeaderboardContainer-table'>
       <thead id='LeaderboardContainer-header'>
         <tr id='LeaderboardContainer-header-row'>
-          <th className='LeaderboardContainer-header-cell'>{props.stat}</th>
+          {props.stat === 'IER' ? (<Popup content='Impact Efficiency Rating' basic inverted trigger={<th className='LeaderboardContainer-header-cell'>{props.stat}</th>} />) : (<th className='LeaderboardContainer-header-cell'>{props.stat}</th>)}
           <th className='LeaderboardContainer-header-cell'></th>
           <th className='LeaderboardContainer-header-cell'></th>
         </tr>

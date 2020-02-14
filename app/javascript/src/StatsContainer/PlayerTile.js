@@ -5,6 +5,7 @@ const PlayerTile = (props) => {
     <tr id='PlayerTile-row'>
       <td className='PlayerTile-cell'>{props.name}</td>
       <td className='PlayerTile-cell'>{props.teamName}</td>
+      <td className='PlayerTile-cell'>{props.role}</td>
       <td className='PlayerTile-cell'>{props.kills}</td>
       <td className='PlayerTile-cell'>{props.deaths}</td>
       <td className='PlayerTile-cell'>{props.assists}</td>

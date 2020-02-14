@@ -20,11 +20,12 @@ class ApplicationController < ActionController::Base
           name: player_data[0],
           league_id: league_id,
           team_id: Team.where(name: player_data[1], league_id: league_id)[0].id,
-          kills: player_data[2],
-          deaths: player_data[3],
-          assists: player_data[4],
-          games_played: player_data[29],
-          ier: player_data[30],
+          role: player_data[2],
+          kills: player_data[3],
+          deaths: player_data[4],
+          assists: player_data[5],
+          games_played: player_data[30],
+          ier: player_data[31],
           updated_at: Time.now
         )
       else
@@ -32,11 +33,12 @@ class ApplicationController < ActionController::Base
           name: player_data[0],
           league_id: league_id,
           team_id: Team.where(name: player_data[1])[0].id,
-          kills: player_data[2],
-          deaths: player_data[3],
-          assists: player_data[4],
-          games_played: player_data[29],
-          ier: player_data[30]
+          role: player_data[2],
+          kills: player_data[3],
+          deaths: player_data[4],
+          assists: player_data[5],
+          games_played: player_data[30],
+          ier: player_data[31]
         )
         player.save
       end
