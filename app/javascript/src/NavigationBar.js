@@ -24,7 +24,7 @@ class NavigationBar extends Component {
           <Link to='/' id='NavigationBar-left-logo' onClick={event => this.props.handleNavigation(event, '/')}><img id='NavigationBar-logo' src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></Link>
         </div>
         <div id='NavigationBar-container-right'>
-          <div className='NavigationBar-right-item Navigationbar-dropdown-button' onClick={this.props.handleDropdown}>{this.props.league} {this.props.dropdown ? (<Icon id='NavigationBar-dropdown-icon' name='dropdown' flipped='vertically'/>) : (<Icon id='NavigationBar-dropdown-icon' name='dropdown'/>)}</div>
+          <div className='NavigationBar-right-item Navigationbar-dropdown-button' onClick={this.props.handleDropdown}>{this.props.leagueName} {this.props.dropdown ? (<Icon id='NavigationBar-dropdown-icon' name='dropdown' flipped='vertically'/>) : (<Icon id='NavigationBar-dropdown-icon' name='dropdown'/>)}</div>
           <Link to='/standings' className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.props.path === '/standings' })} onClick={event => this.props.handleNavigation(event, '/standings')}>Standings</Link>
           <Link to='/stats' className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.props.path === '/stats' })} onClick={event => this.props.handleNavigation(event, '/stats')}>Stats</Link>
           <Link to='/about' className={classNames('NavigationBar-right-item', { 'NavigationBar-active': this.props.path === '/about' })} onClick={event => this.props.handleNavigation(event, '/about')}>About Us</Link>
@@ -33,9 +33,9 @@ class NavigationBar extends Component {
       </div>,
       <div id='NavigationBar-spacer' key='spacer'></div>,
       <div className={classNames('NavigationBar-dropdown-container', { 'NavigationBar-dropdown-container-hidden': !this.props.dropdown })} key='dropdown'>
-        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.league === 'FCS' })} onClick={event => this.props.handleLeagueChange(event, 'FCS')}>FCS</div>
-        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.league === 'Propel' })} onClick={event => this.props.handleLeagueChange(event, 'Propel')}>Propel</div>
-        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.league === 'Aspire' })} onClick={event => this.props.handleLeagueChange(event, 'Aspire')}>Aspire</div>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.leagueName === 'FCS' })} onClick={event => this.props.handleLeagueChange(event, 'FCS')}>FCS</div>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.leagueName === 'Propel' })} onClick={event => this.props.handleLeagueChange(event, 'Propel')}>Propel</div>
+        <div className={classNames('NavigationBar-dropdown-item', { 'NavigationBar-dropdown-active': this.props.leagueName === 'Aspire' })} onClick={event => this.props.handleLeagueChange(event, 'Aspire')}>Aspire</div>
       </div>
     ];
   }
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
   return {
     path: state.navigationBar.path,
     dropdown: state.navigationBar.dropdown,
-    league: state.leagueData.league
+    leagueName: state.leagueData.leagueName
   }
 }
 

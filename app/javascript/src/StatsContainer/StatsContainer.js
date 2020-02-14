@@ -28,7 +28,7 @@ const StatsContainer = (props) => {
   return (
     <div id='StatsContainer-container'>
       <div id='StatsContainer-title-container'>
-        <img id='StatsContainer-logo' src={`${pathToLeagueLogo(`./${(props.league).toLowerCase()}_blue`, true)}`} alt={`${props.league} League Logo`} />
+        <img id='StatsContainer-logo' src={`${pathToLeagueLogo(`./${(props.leagueName).toLowerCase()}_blue`, true)}`} alt={`${props.leagueName} League Logo`} />
       </div>
       {!props.isFetching ? [
         <div id='StatsContainer-leadboard-container' key='leadeboards'>
@@ -54,7 +54,10 @@ const StatsContainer = (props) => {
           <tbody id='StatsContainer-body'>
             {players}
           </tbody>
-        </table>
+        </table>,
+        <div id='StatsContainer-all-stats-container' key='statsUrl'>
+          <a id='StatsContainer-all-stats-text' href={props.statsUrl} target='_blank'>ALL STATS</a>
+        </div>
       ] : (
         <div id='StatsContainer-loading-container'>
           <img id='StatsContainer-loading-gears' src={loading_gears} />
@@ -67,7 +70,8 @@ const StatsContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    league: state.leagueData.league,
+    leagueName: state.leagueData.leagueName,
+    statsUrl: state.leagueData.statsUrl,
     players: state.leagueData.players,
     isFetching: state.leagueData.isFetching,
     sort: state.statsContainer.sort,

@@ -1,7 +1,9 @@
 const initialState = {
-  league: 'FCS',
-  minRank: 'Diamond',
-  maxRank: 'Challenger',
+  leagueName: 'FCS',
+  minRank: '',
+  maxRank: '',
+  standingsUrl: '',
+  statsUrl: '',
   teams: [],
   players: [],
   isFetching: false
@@ -16,9 +18,9 @@ const leagueData = (state = initialState, action) => {
     case GET_DATA_REQUEST_FAILURE:
       return {...state, isFetching: false }
     case SET_DATA:
-      return {...state, minRank: action.minRank, maxRank: action.maxRank, teams: action.teams, players: action.players }
+      return {...state, minRank: action.minRank, maxRank: action.maxRank, standingsUrl: action.standingsUrl, statsUrl: action.statsUrl, teams: action.teams, players: action.players }
     case CHANGE_LEAGUE:
-      return {...state, league: action.desiredLeague}
+      return {...state, leagueName: action.desiredLeague}
     default:
       return state;
   }
@@ -46,11 +48,13 @@ const getDataRequestFailure = () => {
 }
 
 const SET_DATA = 'SET_DATA';
-const setData = (minRank, maxRank, teams, players) => {
+const setData = (minRank, maxRank, standingsUrl, statsUrl, teams, players) => {
   return {
     type: SET_DATA,
     minRank: minRank,
     maxRank: maxRank,
+    standingsUrl,
+    statsUrl,
     teams: teams,
     players: players
   }
@@ -67,7 +71,7 @@ const changeLeague = (desiredLeague) => {
 const getData = () => {
   return (dispatch, getState) => {
     dispatch(getDataRequest());
-    return fetch(`/api/v1/league/${getState().leagueData.league.toLowerCase()}`)
+    return fetch(`/api/v1/league/${getState().leagueData.leagueName.toLowerCase()}`)
     .then(response => {
       if(response.ok) {
         return response.json();
@@ -78,7 +82,7 @@ const getData = () => {
     .then(response => {
       if(!response.error) {
         response.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier));
-        dispatch(setData(response.min_rank, response.max_rank, response.teams, response.players));
+        dispatch(setData(response.min_rank, response.max_rank, response.standings_url, response.stats_url, response.teams, response.players));
         dispatch(getDataRequestSuccess());
       }
     })

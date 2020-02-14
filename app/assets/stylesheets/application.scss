@@ -281,6 +281,18 @@ body {
   font-weight: bold;
   color: #FFFFFF;
 }
+#StatsContainer-all-stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+#StatsContainer-all-stats-text {
+  color: #0EFBFB;
+  font-weight: bold;
+  text-decoration: underline;
+}
 /* Footer */
 #Footer-container {
   display: flex;
