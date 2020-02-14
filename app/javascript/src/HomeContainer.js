@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Message } from 'semantic-ui-react';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <div id='HomeContainer-container'>
-        <h1 id='test'>Home</h1>
+      <div style={{paddingTop: '10px'}}>
+        <Message warning icon='wrench' header='This Page (Home) is Still Under Development' content='Please head over to Standings or Stats to see our currently available content! We are sorry for the inconvenience.' />
       </div>
     )
   }
