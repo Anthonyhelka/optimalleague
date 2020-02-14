@@ -76,3 +76,5 @@ group :production, :staging do
 end
 
 gem 'google_drive'
+
+gem 'whenever', :require => false
