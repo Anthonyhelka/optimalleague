@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
     t.integer "assists"
     t.integer "games_played"
     t.integer "ier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_players_on_league_id"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
@@ -44,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
     t.string "group", null: false
     t.integer "wins", null: false
     t.integer "losses", null: false
+    t.string "roster", default: [], array: true
     t.index ["league_id"], name: "index_teams_on_league_id"
   end
 

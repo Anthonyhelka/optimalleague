@@ -11,8 +11,6 @@ class CreatePlayer < ActiveRecord::Migration[5.2]
       t.integer :assists
       t.integer :games_played
       t.integer :ier
-
-      t.timestamps
     end
   end
 end

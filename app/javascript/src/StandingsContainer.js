@@ -10,7 +10,6 @@ class StandingsContainer extends Component {
   }
 
   render() {
-
     let teams = this.props.teams.map(team => {
       return (
         <StandingsTile
@@ -20,7 +19,7 @@ class StandingsContainer extends Component {
           group={team.group}
           wins={team.wins}
           losses={team.losses}
-          players={team.players}
+          roster={team.roster}
         />
       )
     });

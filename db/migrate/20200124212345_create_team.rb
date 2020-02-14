@@ -8,6 +8,7 @@ class CreateTeam < ActiveRecord::Migration[5.2]
       t.string :group, null: false
       t.integer :wins, null: false
       t.integer :losses, null: false
+      t.string :roster,  array: true, default: []
     end
   end
 end
