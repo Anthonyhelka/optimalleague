@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { handleNavigation, handleDropdown, handleOutsideClick } from './Redux/modules/navigationBar';
-import { handleLeagueChange } from './Redux/modules/leagueData';
+import { handleNavigation, handleDropdown, handleOutsideClick } from '../Redux/modules/navigationBar.js';
+import { handleLeagueChange } from '../Redux/modules/leagueData.js';
 import { Icon } from 'semantic-ui-react';
 
 var classNames = require('classnames');
@@ -21,7 +21,7 @@ class NavigationBar extends Component {
     return [
       <div id='NavigationBar-container' key='navbar'>
         <div id='NavigationBar-container-left'>
-          <Link to='/' id='NavigationBar-left-logo' onClick={event => this.props.handleNavigation(event, '/')}><img id='NavigationBar-logo' src={require('../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></Link>
+          <Link to='/' id='NavigationBar-left-logo' onClick={event => this.props.handleNavigation(event, '/')}><img id='NavigationBar-logo' src={require('../../../assets/images/logos/full_purple.png')} alt='Focus Esports Logo'/></Link>
         </div>
         <div id='NavigationBar-container-right'>
           <div className='NavigationBar-right-item Navigationbar-dropdown-button' onClick={this.props.handleDropdown}>{this.props.leagueName} {this.props.dropdown ? (<Icon id='NavigationBar-dropdown-icon' name='dropdown' flipped='vertically'/>) : (<Icon id='NavigationBar-dropdown-icon' name='dropdown'/>)}</div>
