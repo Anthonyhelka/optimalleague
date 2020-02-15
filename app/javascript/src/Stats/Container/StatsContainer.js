@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './StatsContainer.module.css';
+import classes from '../../../../assets/stylesheets/StatsContainer.module.css';
 import { connect } from 'react-redux';
 import { handleSort } from '../../Redux/modules/statsContainer.js';
 import Leaderboard from '../Leaderboard/Leaderboard.js';
