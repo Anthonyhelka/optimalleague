@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './PlayerTable.module.css';
+import classes from './PlayerTable.module.scss';
 
 const PlayerTile = (props) => {
   return (

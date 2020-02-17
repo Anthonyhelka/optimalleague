@@ -1,0 +1,143 @@
+/* NavigationBar */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: #000000;
+  z-index: 2;
+}
+
+.columnLeft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  height: 100%;
+  padding: 0px 0px 0px 30px;
+  border-bottom: 2px solid #783BB5;
+}
+
+.columnRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.rightButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-bottom: 2px solid #783BB5;
+  cursor: pointer;
+}
+
+.rightButton:hover {
+  border-bottom: 2px solid #0EFBFB;
+  color: #FFFFFF;
+}
+
+.activeButton {
+  border-bottom: 2px solid #0EFBFB !important;
+}
+.spacer {
+  width: 100%;
+  height: 50px;
+}
+
+.dropdownIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownContainer,
+.dropdownContainerHidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  -webkit-transition: top 0.2s linear;
+  -moz-transition: top 0.2s linear;
+  -o-transition: top 0.2s linear;
+  transition: top 0.2s linear;
+  width: 50%;
+  max-width: 780px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  background-color: #000000;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dropdownContainerHidden {
+  top: 0px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.3%;
+  height: 100%;
+  font-weight: bold;
+  color: #000000;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dropdownItem:hover {
+  color: #783BB5;
+}
+
+.dropdownItemActive {
+  color: #FFFFFF;
+  background-color: #783BB5;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dropdownItemActive:hover {
+  color: #FFFFFF;
+}

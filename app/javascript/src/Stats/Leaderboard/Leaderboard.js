@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Leaderboard.module.css';
+import classes from './Leaderboard.module.scss';
 import { Popup } from 'semantic-ui-react';
 
 const Leaderboard = (props) => {
