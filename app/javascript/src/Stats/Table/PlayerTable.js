@@ -31,7 +31,7 @@ const PlayerTable = (props) => {
           <th className={classes.headerCell} onClick={event => props.handleSort(event, 'assists')}>Assists&nbsp;{props.sort === 'assists' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
           <th className={classes.headerCell} onClick={event => props.handleSort(event, 'kda')}>KDA&nbsp;{props.sort === 'kda' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
           <th className={classes.headerCell} onClick={event => props.handleSort(event, 'gamesPlayed')}>Games&nbsp;{props.sort === 'gamesPlayed' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>
-          <Popup content='Impact Efficiency Rating' basic inverted trigger={<th className={classes.headerCell} onClick={event => props.handleSort(event, 'ier')}>IER&nbsp;{props.sort === 'ier' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>} />
+          <Popup content='Impact Efficiency Rating' trigger={<th className={classes.headerCell} onClick={event => props.handleSort(event, 'ier')}>IER&nbsp;{props.sort === 'ier' ? (<Icon name={`sort ${props.direction}`}/>) : (<Icon name={`sort`}/>)}</th>} />
         </tr>
       </thead>
       <tbody className={classes.body}>
