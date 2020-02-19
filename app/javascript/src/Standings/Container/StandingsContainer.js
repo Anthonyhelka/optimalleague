@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import classes from './StandingsContainer.module.scss';
 import { connect } from 'react-redux';
-
-import StandingsTile from './StandingsTile';
-import loading_gears from '../../assets/images/miscellaneous_images/loading_gears_black.svg';
+import StandingsTile from '../StandingsTile.js';
+import loading_gears from '../../../../assets/images/miscellaneous_images/loading_gears_white.svg';
 
 class StandingsContainer extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class StandingsContainer extends Component {
   }
 
   render() {
+    debugger
     let teams = this.props.teams.map(team => {
       return (
         <StandingsTile
@@ -25,7 +26,7 @@ class StandingsContainer extends Component {
     });
 
     return (
-      <div id='StandingsContainer-container'>
+      <div className={classes.container}>
         <h1>{this.props.league}</h1>
         {!this.props.isFetching ? (
           <div>
@@ -36,9 +37,9 @@ class StandingsContainer extends Component {
             </div>
           </div>
         ) : (
-          <div id='StandingsContainer-loading-container'>
-            <img id='StandingsContainer-loading-gears' src={loading_gears} />
-            <span id='StandingsContainer-loading-text'>We are fetching data, please be patient!</span>
+          <div className={classes.loadingContainer}>
+            <img className={classes.loadingSpinner} src={loading_gears} />
+            <span className={classes.loadingText}>We are fetching data, please be patient!</span>
           </div>
         )}
       </div>
@@ -48,9 +49,10 @@ class StandingsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    league: state.leagueData.league,
+    leagueName: state.leagueData.leagueName,
     minRank: state.leagueData.minRank,
     maxRank: state.leagueData.maxRank,
+    leagueGroups: state.leagueData.groups,
     teams: state.leagueData.teams,
     isFetching: state.leagueData.isFetching
   }

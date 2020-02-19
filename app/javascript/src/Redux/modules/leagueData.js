@@ -2,6 +2,7 @@ const initialState = {
   leagueName: 'FCS',
   minRank: '',
   maxRank: '',
+  groups: [],
   standingsUrl: '',
   statsUrl: '',
   teams: [],
@@ -18,7 +19,7 @@ const leagueData = (state = initialState, action) => {
     case GET_DATA_REQUEST_FAILURE:
       return {...state, isFetching: false }
     case SET_DATA:
-      return {...state, minRank: action.minRank, maxRank: action.maxRank, standingsUrl: action.standingsUrl, statsUrl: action.statsUrl, teams: action.teams, players: action.players }
+      return {...state, minRank: action.minRank, maxRank: action.maxRank, groups: action.groups, standingsUrl: action.standingsUrl, statsUrl: action.statsUrl, teams: action.teams, players: action.players }
     case CHANGE_LEAGUE:
       return {...state, leagueName: action.desiredLeague}
     default:
@@ -48,11 +49,12 @@ const getDataRequestFailure = () => {
 }
 
 const SET_DATA = 'SET_DATA';
-const setData = (minRank, maxRank, standingsUrl, statsUrl, teams, players) => {
+const setData = (minRank, maxRank, groups, standingsUrl, statsUrl, teams, players) => {
   return {
     type: SET_DATA,
     minRank: minRank,
     maxRank: maxRank,
+    groups: groups,
     standingsUrl,
     statsUrl,
     teams: teams,
@@ -82,7 +84,7 @@ const getData = () => {
     .then(response => {
       if(!response.error) {
         response.players.sort((a, b) => parseFloat(b.ier) - parseFloat(a.ier));
-        dispatch(setData(response.min_rank, response.max_rank, response.standings_url, response.stats_url, response.teams, response.players));
+        dispatch(setData(response.min_rank, response.max_rank, response.groups, response.standings_url, response.stats_url, response.teams, response.players));
         dispatch(getDataRequestSuccess());
       }
     })

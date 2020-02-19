@@ -5,6 +5,7 @@ class League < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :min_rank, presence: true
   validates :max_rank, presence: true
+  validates :groups, presence: true
   validates :standings_url, presence: true
   validates :stats_url, presence: true
 end

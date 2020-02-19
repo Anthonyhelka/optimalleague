@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
     t.string "name", null: false
     t.string "min_rank", null: false
     t.string "max_rank", null: false
+    t.string "groups", default: [], array: true
     t.string "standings_url", null: false
     t.string "stats_url", null: false
   end

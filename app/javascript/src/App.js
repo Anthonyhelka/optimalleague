@@ -7,7 +7,7 @@ import { getData } from './Redux/modules/leagueData.js';
 
 import NavigationBar from './NavigationBar/NavigationBar.js';
 import HomeContainer from './HomeContainer.js';
-import StandingsContainer from './StandingsContainer.js';
+import StandingsContainer from './Standings/Container/StandingsContainer.js';
 import StatsContainer from './Stats/Container/StatsContainer.js';
 import AboutContainer from './AboutContainer.js';
 

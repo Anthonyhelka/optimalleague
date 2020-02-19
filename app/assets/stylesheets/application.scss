@@ -13,25 +13,6 @@ body {
   background-color: #FFFFFF;
 }
 
-/* StandingsContainer */
-#StandingsContainer-container {
-  padding: 20px
-}
-#StandingsContainer-loading-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#StandingsContainer-loading-gears {
-  width: 60px;
-  height: 60px
-}
-#StandingsContainer-loading-text {
-  font-weight: bold;
-  color: #000000;
-}
-
 /* Footer */
 #Footer-container {
   display: flex;
