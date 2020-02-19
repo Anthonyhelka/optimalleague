@@ -9,7 +9,7 @@ const PlayerTable = (props) => {
       <PlayerTile
         key={player.id}
         name={player.name}
-        teamName={player.team.name}
+        teamName={player.team_id === null ? 'N/A' : player.team.name}
         role={player.role}
         kills={player.kills}
         deaths={player.deaths}

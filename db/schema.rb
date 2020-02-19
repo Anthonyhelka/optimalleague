@@ -10,23 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_212350) do
+ActiveRecord::Schema.define(version: 2020_02_19_021548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.string "name", null: false
+    t.index ["league_id"], name: "index_groups_on_league_id"
+  end
 
   create_table "leagues", force: :cascade do |t|
     t.string "name", null: false
     t.string "min_rank", null: false
     t.string "max_rank", null: false
-    t.string "groups", default: [], array: true
     t.string "standings_url", null: false
     t.string "stats_url", null: false
   end
 
   create_table "players", force: :cascade do |t|
     t.bigint "league_id", null: false
-    t.bigint "team_id", null: false
+    t.bigint "team_id"
     t.string "name", null: false
     t.string "role"
     t.integer "kills"
@@ -40,12 +45,13 @@ ActiveRecord::Schema.define(version: 2020_01_24_212350) do
 
   create_table "teams", force: :cascade do |t|
     t.bigint "league_id", null: false
+    t.bigint "group_id", null: false
     t.string "name", null: false
     t.string "tag", null: false
-    t.string "group", null: false
     t.integer "wins", null: false
     t.integer "losses", null: false
     t.string "roster", default: [], array: true
+    t.index ["group_id"], name: "index_teams_on_group_id"
     t.index ["league_id"], name: "index_teams_on_league_id"
   end
 

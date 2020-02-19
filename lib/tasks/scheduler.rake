@@ -2,30 +2,21 @@ def store_teams(data, league_id)
   data.each do |team_data|
     team = Team.create(
       league_id: league_id,
+      group_id: Group.where(name: team_data[2], league_id: league_id)[0].id,
       name: team_data[0],
       tag: team_data[1],
-      group: team_data[2],
       wins: team_data[3],
       losses: team_data[4],
       roster: team_data[5].split(", ")
     )
     team.save
   end
-  no_team = Team.create(
-    league_id: league_id,
-    name: "N/A",
-    tag: "N/A",
-    group: "N/A",
-    wins: 0,
-    losses: 0
-  )
-  no_team.save
 end
 
 def store_players(data, league_id)
   data.each do |player_data|
     if(Team.where(name: player_data[1], league_id: league_id).empty?)
-      team_id = Team.where(name: "N/A", league_id: league_id)[0].id
+      team_id = nil
     else
       team_id = Team.where(name: player_data[1], league_id: league_id)[0].id
     end

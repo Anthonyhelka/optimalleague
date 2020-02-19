@@ -7,7 +7,7 @@ const Leaderboard = (props) => {
     return(
       <tr className={classes.row} key={player.id}>
         <td className={classes.cell}>{player.name}</td>
-        <Popup content={player.team.name} trigger={<td className={classes.cell}>{player.team.tag}</td>} />
+        <Popup content={player.team_id === null ? 'No Team' : player.team.name} trigger={<td className={classes.cell}>{player.team_id === null ? 'N/A' : player.team.tag}</td>} />
         {props.stat === 'Kills' && <td className={classes.cell}>{player.kills}</td>}
         {props.stat === 'Assists' && <td className={classes.cell}>{player.assists}</td>}
         {props.stat === 'KDA' && <td className={classes.cell}>{((player.kills + player.assists) / player.deaths).toFixed(2)}</td>}

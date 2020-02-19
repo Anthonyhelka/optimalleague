@@ -41,7 +41,12 @@ const handleSort = (event, desiredSort) => {
         getState().leagueData.players.sort(function(a, b) { return (direction === 'ascending' ? a.name < b.name : b.name < a.name) ? -1 : (direction === 'ascending' ? a.name > b.name : b.name > a.name) ? 1 : 0; });
         break;
       case 'teamName':
-        getState().leagueData.players.sort(function(a, b) { return (direction === 'ascending' ? a.team.name < b.team.name : b.team.name < a.team.name) ? -1 : (direction === 'ascending' ? a.team.name > b.team.name : b.team.name > a.team.name) ? 1 : 0; });
+        getState().leagueData.players.sort(function(a, b) {
+          let aTeam;
+          a.team_id === null ? aTeam = 'N/A' : aTeam = a.team.name;
+          let bTeam;
+          b.team_id === null ? bTeam = 'N/A' : bTeam = b.team.name;
+          return (direction === 'ascending' ? aTeam < bTeam : bTeam < aTeam) ? -1 : (direction === 'ascending' ? aTeam > bTeam : bTeam > aTeam) ? 1 : 0; });
         break;
       case 'role':
         getState().leagueData.players.sort(function(a, b) { return (direction === 'ascending' ? a.role < b.role : b.role < a.role) ? -1 : (direction === 'ascending' ? a.role > b.role : b.role > a.role) ? 1 : 0; });
