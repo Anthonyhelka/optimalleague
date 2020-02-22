@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import classes from './StandingsContainer.module.scss';
 import { connect } from 'react-redux';
-import GroupContainer from '../GroupContainer.js';
+import GroupContainer from '../Group/GroupContainer.js';
 import loading_gears from '../../../../assets/images/miscellaneous_images/loading_gears_white.svg';
 
 const StandingsContainer = (props) => {
+  const pathToLeagueLogo = require.context('../../../../assets/images/logos', true);
   let groups = props.groups.map(group => {
     return (
       <GroupContainer
@@ -17,9 +18,11 @@ const StandingsContainer = (props) => {
 
   return (
     <div className={classes.container}>
-      <h1>{props.league}</h1>
+      <div className={classes.headerContainer}>
+        <img className={classes.leagueLogo} src={`${pathToLeagueLogo(`./${(props.leagueName).toLowerCase()}_blue`, true)}`} alt={`${props.leagueName} League Logo`} />
+      </div>
       {!props.isFetching ? (
-        <div>
+        <div className={classes.groupsContainer}>
           {groups}
         </div>
       ) : (

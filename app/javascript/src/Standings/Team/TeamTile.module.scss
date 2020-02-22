@@ -1,0 +1,23 @@
+.row:nth-child(even) {
+  height: 25px;
+  background-color: #13082c;
+}
+
+.row:nth-child(odd) {
+  height: 25px;
+  background-color: #490C87;
+}
+
+.cell {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.link {
+  color: #0EFBFB;
+}
+
+.link:hover {
+  color: #0EFBFB;
+  font-weight: bold;
+}
